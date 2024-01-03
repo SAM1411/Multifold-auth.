@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<form class="container" method="post" action="/signup">
+  <div class="mb-3">
+    <center><h1 id="formheading"><u>SignUp</u></h1></center>
+    <label for="username" class="form-label"><b>Email</b></label>
+    <input
+      type="email"
+      class="form-control"
+      id="username"
+      placeholder="Enter Email Address"
+      aria-describedby="emailHelp"
+      name="username"
+      autofocus
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label"><b>Password</b></label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      placeholder="Enter Password"
+      name="password"
+      required
+    />
+   
+  </div>
+  <div class="mb-3">
+    <label for="mobilenumber" class="form-label"><b>Mobile Number</b></label>
+    <input
+      type="tel"
+      class="form-control"
+      id="mobilenumber"
+      placeholder="Enter Mobile No."
+      name="mobilenumber"
+      pattern="[0-9]{10}"
+      oninvalid="setCustomValidity('Please Enter a 10 Digit Number.')"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="question">
+     <b> Select a Security Question :</b>
+    </label>
+    <br />
+    <select name="question" id="question" required>
+      <option value="What was the first exam you failed?">
+        What was the first exam you failed?
+      </option>
+      <option value="What is your oldest cousin's first name?">
+        What is your oldest cousin's first name?
+      </option>
+      <option value="In what city or town did your mother and father meet?">
+        In what city or town did your mother and father meet?
+      </option>
+      <option value="In what city did you meet your spouse/significant other?">
+        In what city did you meet your spouse/significant other?
+      </option>
+    </select>
+    <input type="text" class="form-control" name="answer" placeholder="Your Answer" required />
+  </div>
+  
+  <button type="submit" class="btn btn-success">Submit</button>
+  
+</form>
+
+<%- include('partials/footer') %>

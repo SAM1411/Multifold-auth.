@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+<form class="container" method="post" action="/login">
+  <div class="mb-3">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Heyy!</strong> You must have registered user.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% try { %>
+      <% if (error) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong><%=error%></strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% } %>
+      <% } catch (error) { %>
+        <div class="mb-3">
+        </div>
+      <% } %>
+    <center><h1 id="formheading"><u>LogIn</u></h1></center>
+    <label for="email" class="form-label"><h4><b>Email Address</b></h4></label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="Enter Email Address"
+      aria-describedby="emailHelp"
+      name="email"
+      autofocus
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label"><h4><b>Password</b></h4></label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      placeholder="Enter Passsword"
+      name="password"
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<%- include('partials/footer') %>

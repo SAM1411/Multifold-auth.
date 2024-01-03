@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<script type="text/javascript">
+  var onloadCallback = function () {
+    grecaptcha.render("html_element", {
+      sitekey: "<%=sitekey%>",
+    });
+  };
+</script>
+<form action="/captcha" method="POST">
+  <div id="html_element"></div>
+  <br />
+ 
+  <input type="submit" value="Submit"class="btn btn-success" />
+  
+</form>
+<script
+  src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+  async
+  defer
+></script>
+
+<%- include('partials/footer') %>

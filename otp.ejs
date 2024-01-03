@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<form class="container" method="post" action="/otp">
+  <div class="mb-3">
+    <% try { %>
+      <% if (error) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong><%=error%></strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% } %>
+      <% } catch (error) { %>
+        <div class="mb-3">
+        </div>
+      <% } %>
+    <center><h1 id="formheading">OTP</h1></center>
+    <label for="otp" class="form-label"><b>Enter OTP</b></label>
+    <input
+      type="otp"
+      class="form-control"
+      id="otp"
+      aria-describedby="emailHelp"
+      name="otp"
+      autofocus
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+<%- include('partials/footer') %>
